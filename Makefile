@@ -1,7 +1,7 @@
 ####################################################################################################################
 # Setup containers to run Airflow
 get-data:
-	rm -rf ./data && rm -rf data.zip* && cp mnt/c/Users/User/Desktop/transaction data/lpetrocelli-czech-financial-dataset-real-anonymized-transactions/lpetrocelli-czech-financial-dataset-real-anonymized-transactions/data && chmod -R u=rwx,g=rwx,o=rwx data
+	rm -rf ./data && cp mnt/c/Users/User/Desktop/transaction data/lpetrocelli-czech-financial-dataset-real-anonymized-transactions/lpetrocelli-czech-financial-dataset-real-anonymized-transactions/data . && chmod -R u=rwx,g=rwx,o=rwx data
 
 docker-spin-up:
 	docker compose  --env-file env up airflow-init && docker compose --env-file env up --build -d
